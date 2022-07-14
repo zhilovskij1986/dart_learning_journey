@@ -1,7 +1,9 @@
 void main() {
-  task1();  
+  task1();
   task2();
+  task3();
 }
+
 /// Завдання 1: Математичні оператори
 /// Створіть змінні довжина і ширина прямокутника (ширина 18.4, висота 30.9)
 ///
@@ -9,19 +11,20 @@ void main() {
 /// Виведіть площу і периметр.
 /// Використайте оператор ~/ для обчислення скільки повних квадратів 1х1 вміщається у площу.
 void task1() {
- final width = 18.4;
- final height = 30.9;
+  final width = 18.4;
+  final height = 30.9;
 
- final area = width * height;
- final perimeter = 2 * (width + height);
+  final area = width * height;
+  final perimeter = 2 * (width + height);
 
- final squares = area ~/ 1;
+  final squares = area ~/ 1;
 
- print('Площа прямокутника $area');
- print('Периметр прямокутника $perimeter');
- print('Кількість повних квадратів 1x1: $squares');
- print('______________________________________________');
+  print('Площа прямокутника $area');
+  print('Периметр прямокутника $perimeter');
+  print('Кількість повних квадратів 1x1: $squares');
+  print('______________________________________________');
 }
+
 /// Завдання 2: Оператори порівняння
 /// Створіть змінну number.
 ///
@@ -30,10 +33,10 @@ void task1() {
 /// Чи менше число за 100.
 /// Чи ділиться число на 5 без залишку.
 /// Виведіть всі результати.
-void task2() {  
-  var number = 75;  
-  bool isGreaterThan50 = number > 50;  
-  bool isLessThan100 = number < 100;  
+void task2() {
+  var number = 75;
+  bool isGreaterThan50 = number > 50;
+  bool isLessThan100 = number < 100;
   bool isDivisibleBy5 = number % 5 == 0;
 
   print('Число: $number');
@@ -41,4 +44,22 @@ void task2() {
   print('Чи менше за 100? $isLessThan100');
   print('Чи ділиться на 5 без залишку? $isDivisibleBy5');
   print('______________________________________________');
+}
+
+/// Завдання 3: Логічні оператори
+/// Створіть змінні hasMoney і isStoreOpen (типу bool).
+///
+/// Перевірте:
+/// Чи можна зробити покупку (якщо є гроші і магазин відкритий).
+/// Чи потрібно почекати (якщо магазин закритий або немає грошей).
+/// Використайте оператори &&, ||, !.
+void task3() {
+  bool hasMoney = true;
+  bool isStoreOpen = false;
+
+  bool canBuy = hasMoney && isStoreOpen;
+  bool mustWait = isStoreOpen || !isStoreOpen;
+
+  print('Чи можна зробити покупку (якщо є гроші і магазин відкритий) $canBuy');
+  print('Чи потрібно почекати (якщо магазин закритий або немає грошей) $mustWait');
 }
