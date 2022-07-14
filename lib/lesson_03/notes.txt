@@ -2,4 +2,4 @@ Leson #3
 
 Leson about Git
 
-Me first work with Git
+Me first work with Git and i try to understand how it's work
