@@ -1,3 +1,5 @@
 Leson #3
 
 Leson about Git
+
+Me first work with Git
