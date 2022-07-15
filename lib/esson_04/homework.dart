@@ -1,6 +1,7 @@
 void main() {
   primitives();  
   collections();
+  varFinalConst();
 }
 
 /// Створи змінні та виведи їх:
@@ -43,3 +44,24 @@ void collections() {
   print('______________________________________');
 }
 
+/// Завдання 3: var, final, const
+/// 1. Створи змінну через var — наприклад, місто проживання та зміни її декілька разів (print після кожної зміни)
+/// 2. Створи змінну через final — наприклад, країна
+/// 3. Створи змінну через const — наприклад, кількість днів у тижні
+void varFinalConst() {
+  var city = 'Vinnitsa';
+  print(city);
+  city = 'Kyiv';
+  print(city);
+  city = 'Lviv';
+  print(city);
+  print('______________________________________');
+
+  final country = 'Ukraine';
+  print(country);
+  print('______________________________________');
+
+  const numberDayWeak = 7;
+  print(numberDayWeak);
+  print('______________________________________');
+}
