@@ -3,6 +3,7 @@ void main() {
   collections();
   varFinalConst();
   record();
+  nullable();
 }
 
 /// Створи змінні та виведи їх:
@@ -79,4 +80,11 @@ void record() {
   print('Ім\'я: ${MyNameAgeParam.name}');
   print('Вік: ${MyNameAgeParam.age}');
   print('______________________________________');
+}
+/// Завдання 5: Nullable (опціонально)
+/// Створи змінну String? nickname — може бути null або ім'я.
+/// Виведи її через ??: якщо null — виведи "Немає", інакше — значення.
+void nullable() {
+  String? nickname;
+  print(nickname ?? "Відсутнє ім'я");
 }
