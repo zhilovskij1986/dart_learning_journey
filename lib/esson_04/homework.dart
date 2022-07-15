@@ -1,7 +1,8 @@
 void main() {
-  primitives();  
+  primitives();
   collections();
   varFinalConst();
+  record();
 }
 
 /// Створи змінні та виведи їх:
@@ -63,5 +64,19 @@ void varFinalConst() {
 
   const numberDayWeak = 7;
   print(numberDayWeak);
+  print('______________________________________');
+}
+
+/// Завдання 4: Record
+/// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та віком і виведи обидва поля.
+void record() {
+  var MyNameAge = ('Vitaliy', 40);
+  print('Ім\'я: ${MyNameAge.$1}');
+  print('Вік: ${MyNameAge.$2}');
+  print('______________________________________');
+
+  var MyNameAgeParam = (name: 'Vitaliy', age: 40);
+  print('Ім\'я: ${MyNameAgeParam.name}');
+  print('Вік: ${MyNameAgeParam.age}');
   print('______________________________________');
 }
