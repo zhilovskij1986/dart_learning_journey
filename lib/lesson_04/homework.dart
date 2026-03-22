@@ -13,9 +13,9 @@ void main() {
 void primitives() {
   final age = 40;
   final height = 1.76;
-  final name = 'Віталій'; 
+  final name = 'Віталій';    
 
- final isStudent = DateTime.now().year > 2020; 
+  final isStudent = DateTime.now().year > 2020;
 
   final myStatus = isStudent ? 'студент' : 'працюю';
 

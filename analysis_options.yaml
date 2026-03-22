@@ -81,8 +81,7 @@ linter:
     - unnecessary_to_list_in_spreads
     - unreachable_from_main
     - use_colored_box
-    - use_enums
-    - use_if_null_to_convert_nulls_to_bools
+    - use_enums    
     - use_is_even_rather_than_modulo
     - use_named_constants
     - use_string_buffers
