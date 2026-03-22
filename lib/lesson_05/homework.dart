@@ -138,15 +138,15 @@ void task5() {
 /// Поексперементуйте, змінюючи  значення examScore
 
 void task6() {
-  final examScore = 10;
+  final examScore = 65;
 
   if (examScore > 90) {
     print('Відміно');
-  } else if (examScore > 75 && examScore < 90) {
+  } else if (examScore >= 75 && examScore <= 90) {
     print('Добре');
-  } else if (examScore > 60 && examScore < 74) {
+  } else if (examScore >= 60 && examScore <= 74) {
     print('Задовільно');
-  } else if (examScore > 20 && examScore < 60) {
+  } else if (examScore > 20 && examScore <= 60) {
     print('Не здано');
   } else {
     print('Повторити курс');
@@ -191,15 +191,15 @@ void task7() {
 
 void task8() {
   var sum = 0;
-  for (var i = 0; i <= 10; i++) {
+  for (var i = 1; i <= 10; i++) {
     print(i);
   }
   print('______________________________________________');
-  for (var i = 0; i <= 10; i += 2) {
+  for (var i = 1; i <= 10; i += 2) {
     print(i);
   }
   print('______________________________________________');
-  for (var i = 0; i <= 10; i++) {
+  for (var i = 1; i <= 10; i++) {
     sum += i;
   }
   print(sum);
@@ -215,14 +215,15 @@ void task8() {
 
 void task9() {
   var num = 10;
-  while (0 < num) {
-    num -= 1;
+  while (0 < num) {    
     if (num % 2 == 0) {
       print('Парне число: $num');
     } else {
       print('Непарне число: $num');
     }
+    num -= 1;
   }
+  print('______________________________________________');
 }
 
 /// Завдання 10: Break і Continue
@@ -232,7 +233,7 @@ void task9() {
 /// Якщо число більше 15 — зупиніть цикл (break).
 /// Виведіть тільки ті числа, які пройшли обидві перевірки.
 void task10() {
-  for (var i = 0; i < 20; i++) {
+  for (var i = 1; i < 20; i++) {
    if (i > 15) {
       break; 
     }
