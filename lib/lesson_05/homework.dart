@@ -41,10 +41,10 @@ void task1() {
 /// Чи ділиться число на 5 без залишку.
 /// Виведіть всі результати.
 void task2() {
-  var number = 75;
-  bool isGreaterThan50 = number > 50;
-  bool isLessThan100 = number < 100;
-  bool isDivisibleBy5 = number % 5 == 0;
+  final number = 75;
+  final isGreaterThan50 = number > 50;
+  final isLessThan100 = number < 100;
+  final isDivisibleBy5 = number % 5 == 0;
 
   print('Число: $number');
   print('Чи більше за 50? $isGreaterThan50');
@@ -61,11 +61,11 @@ void task2() {
 /// Чи потрібно почекати (якщо магазин закритий або немає грошей).
 /// Використайте оператори &&, ||, !.
 void task3() {
-  bool hasMoney = true;
-  bool isStoreOpen = false;
+  final hasMoney = true;
+  final isStoreOpen = false;
 
-  bool canBuy = hasMoney && isStoreOpen;
-  bool mustWait = isStoreOpen || !isStoreOpen;
+  final canBuy = hasMoney && isStoreOpen;
+  final mustWait = isStoreOpen || !isStoreOpen;
 
   print('Чи можна зробити покупку (якщо є гроші і магазин відкритий) $canBuy');
   print(
@@ -83,11 +83,11 @@ void task3() {
 /// Якщо менше 10 — вивести “Дуже холодно”.
 
 void task4() {
-  var temperature = 5;
+  final temperature = 5;
 
-  var watherStatus1 = temperature >= 25 ? 'Тепло' : 'Прохолодно';
+  final watherStatus1 = temperature >= 25 ? 'Тепло' : 'Прохолодно';
 
-  var watherStatus2 = temperature < 10 ? 'Дуже холодно' : '“Прохолодно”';
+  final watherStatus2 = temperature < 10 ? 'Дуже холодно' : '“Прохолодно”';
 
   print(watherStatus1);
   print(watherStatus2);
@@ -112,9 +112,9 @@ void task4() {
 
 void task5() {
   double score = 0;
-  var correctAnswers = 17;
-  var mistakes = 3;
-  var totalQuestions = 20;
+  final correctAnswers = 17;
+  final mistakes = 3;
+  final totalQuestions = 20;
 
   score += correctAnswers * 10;
   score -= mistakes * 5;
@@ -138,7 +138,7 @@ void task5() {
 /// Поексперементуйте, змінюючи  значення examScore
 
 void task6() {
-  var examScore = 10;
+  final examScore = 10;
 
   if (examScore > 90) {
     print('Відміно');
@@ -163,27 +163,21 @@ void task6() {
 /// Додатково: для вихідних (6, 7) вивести “Вихідний день 🎉”.
 
 void task7() {
-  int dayNumber = 6;
+  final dayNumber = 6;
 
   switch (dayNumber) {
     case 1:
-      print('Понеділок');
-      break;
+      print('Понеділок');      
     case 2:
-      print('Вівторок');
-      break;
+      print('Вівторок');      
     case 3:
-      print('Середа');
-      break;
+      print('Середа');      
     case 4:
-      print('Четвер');
-      break;
+      print('Четвер');      
     case 5:
-      print('П’ятниця');
-      break;
+      print('П’ятниця');      
     case 6 || 7:
-      print('Вихідний день');
-      break;
+      print('Вихідний день');      
     default:
       print('Невірний номер дня');
   }
