@@ -50,3 +50,4 @@ final ukrainianNamesDeepseek = <String>{
   'Марина',
   'Поліна',
 };
+ 
