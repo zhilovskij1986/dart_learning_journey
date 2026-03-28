@@ -31,3 +31,4 @@ void main() {
   }
   print('Довжина temp: ${temp.length}');
 }
+ 

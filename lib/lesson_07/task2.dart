@@ -17,3 +17,4 @@ final differentNamesDeepseek = setDeepseek.difference(setGpt);
 print('Імена, що лише в  setDeepseek: $differentNamesDeepseek');
 
 }
+ 
