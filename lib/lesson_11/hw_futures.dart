@@ -1,11 +1,17 @@
 import 'dart:async';
 
 void main() async {
-  task_1();
-  task_2();
+  final stopwatch = Stopwatch();
+  stopwatch.start();
+
+  await task_1();
+  await task_2();
+
+  stopwatch.stop();
+  print('Загальний час виконання: ${stopwatch.elapsedMilliseconds} мс');
 }
 
-void task_1() async {
+Future<void> task_1() async {
   final resultName = await fetchName();
 
   print('Мене звати $resultName');
@@ -16,19 +22,23 @@ Future<String> fetchName() async {
   return 'Віталій';
 }
 
-void task_2() async {
+Future<void> task_2() async {
   final resulAge = await fetchAge();
-  if (resulAge == '') {
+  if (resulAge.isEmpty) {
     print('Не заповнено поле вік');
   } else {
-    final age = int.parse(resulAge);
-    print('Мені $age ${getAgeAddition(age)}');
+    final age = int.tryParse(resulAge);
+    if (age == null) {
+      print('Введено не коректне число');
+    } else {
+      print('Мені $age ${getAgeAddition(age)}');
+    }
   }
 }
 
 Future<String> fetchAge() async {
   await Future<void>.delayed(Duration(milliseconds: 1500));
-  return '10';
+  return 'jj';
 }
 
 String getAgeAddition(int age) {
