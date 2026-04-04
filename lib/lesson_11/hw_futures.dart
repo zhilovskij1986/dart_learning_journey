@@ -2,10 +2,9 @@ import 'dart:async';
 
 void main() async {
   final stopwatch = Stopwatch();
-  stopwatch.start();
+  stopwatch.start();   
 
-  await task_1();
-  await task_2();
+  final results = await Future.wait([task_1(), task_2()]);
 
   stopwatch.stop();
   print('Загальний час виконання: ${stopwatch.elapsedMilliseconds} мс');
@@ -38,7 +37,7 @@ Future<void> task_2() async {
 
 Future<String> fetchAge() async {
   await Future<void>.delayed(Duration(milliseconds: 1500));
-  return 'jj';
+  return '40';
 }
 
 String getAgeAddition(int age) {
