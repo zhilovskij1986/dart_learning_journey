@@ -1,13 +1,17 @@
 import 'dart:async';
 
 void main() async {
-  final stopwatch = Stopwatch();
-  stopwatch.start();   
+  // final stopwatch = Stopwatch();
+  // stopwatch.start();
 
-  final results = await Future.wait([task_1(), task_2()]);
+  // final results = await Future.wait([task_1(), task_2()]);
 
-  stopwatch.stop();
-  print('Загальний час виконання: ${stopwatch.elapsedMilliseconds} мс');
+  // stopwatch.stop();
+  // print('Загальний час виконання: ${stopwatch.elapsedMilliseconds} мс');
+
+  final result = await delayedCountdown(3);
+
+  print(result);
 }
 
 Future<void> task_1() async {
@@ -50,4 +54,13 @@ String getAgeAddition(int age) {
   } else {
     return 'років';
   }
+}
+
+Future<String> delayedCountdown(int seconds) async {
+  for (var i = seconds; i > 0; i--) {
+    print('$i...');    
+    await Future<void>.delayed(Duration(seconds: 1));
+  }
+
+  return 'Старт!';
 }
