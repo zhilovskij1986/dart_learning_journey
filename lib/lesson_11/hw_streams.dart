@@ -1,7 +1,11 @@
+import 'dart:async';
+
 void main() async {
   streamListen();
 
   streamPeriodic();
+
+  streamController();
 }
 
 void streamListen() async {
@@ -15,9 +19,26 @@ void streamListen() async {
 }
 
 void streamPeriodic() {
-  Stream<int>.periodic(const Duration(seconds: 1), (i) => i + 1)
-      .take(10)
-      .listen((number) {
-        print('$number...');
-      });
+  Stream<int>.periodic(
+    const Duration(seconds: 1),
+    (i) => i + 1,
+  ).take(10).listen((number) {
+    print('$number...');
+  });
+}
+
+void streamController() async {
+  final controller = StreamController<String>();
+
+  controller.stream.listen((data) {
+    print('Отримано: $data');
+  }, 
+  onDone: () => print('Стрім завершено')
+  );
+
+  controller.add('Hello');
+  controller.add('World');
+  controller.add('Dart');
+
+  await controller.close();
 }
