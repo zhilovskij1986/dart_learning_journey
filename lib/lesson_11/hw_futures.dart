@@ -1,17 +1,13 @@
 import 'dart:async';
 
-void main() async {
-  // final stopwatch = Stopwatch();
-  // stopwatch.start();
-
-  // final results = await Future.wait([task_1(), task_2()]);
-
-  // stopwatch.stop();
-  // print('Загальний час виконання: ${stopwatch.elapsedMilliseconds} мс');
-
-  final result = await delayedCountdown(3);
-
-  print(result);
+void main() async { 
+  await Future.wait([
+  task_1(),
+  task_2(), 
+  task_3(),
+  ]);  
+  
+  await task_4();
 }
 
 Future<void> task_1() async {
@@ -34,14 +30,14 @@ Future<void> task_2() async {
     if (age == null) {
       print('Введено не коректне число');
     } else {
-      print('Мені $age ${getAgeAddition(age)}');
+      print('Мені $age ${getAgeAdditionBySwitch(age)}');
     }
   }
 }
 
 Future<String> fetchAge() async {
   await Future<void>.delayed(Duration(milliseconds: 1500));
-  return '40';
+  return '2';
 }
 
 String getAgeAddition(int age) {
@@ -56,11 +52,38 @@ String getAgeAddition(int age) {
   }
 }
 
-Future<String> delayedCountdown(int seconds) async {
-  for (var i = seconds; i > 0; i--) {
-    print('$i...');    
-    await Future<void>.delayed(Duration(seconds: 1));
+String getAgeAdditionBySwitch(int age) {
+  switch (age) {
+    case _ when (age % 100 >= 11 && age % 100 <= 14):
+      return 'років';
+    case _ when (age % 10 == 1):
+      return 'рік';
+    case _ when (age % 10 >= 2 && age % 10 <= 4):
+      return 'роки';
+    default:
+      return 'років';
+  }
+}
+
+Future<void> task_3() async {final stopwatch = Stopwatch();
+  stopwatch.start();
+
+  final results = await Future.wait([task_1(), task_2()]);
+
+  stopwatch.stop();
+  print('Загальний час виконання: ${stopwatch.elapsedMilliseconds} мс');  
   }
 
+Future<void> task_4() async {
+  final result = await delayedCountdown(3);
+
+  print(result);
+}
+
+Future<String> delayedCountdown(int seconds) async {
+  for (var i = seconds; i > 0; i--) {
+    print('$i...');
+    await Future<void>.delayed(Duration(seconds: 1));
+  }
   return 'Старт!';
 }
